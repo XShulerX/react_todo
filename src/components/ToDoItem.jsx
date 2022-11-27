@@ -10,8 +10,8 @@ const ToDoItem = (props) => {
                     defaultChecked={props.toDoItem.done ? "checked" : ""}
                 />{" "}
                 {props.toDoItem.name}
-                <span></span>
             </label>
+            <span onClick={() => props.remove(props.toDoItem)} className="DeleteToDoItem"> </span>
         </div>
     );
 };

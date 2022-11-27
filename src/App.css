@@ -23,7 +23,16 @@
     text-decoration: line-through;
     color: rgba(63, 88, 92, 0.637);
 }
-
+.DeleteToDoItem{
+    margin-left: 5px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/src/delete.png");
+    width: 20px;
+    height: 20px;
+    line-height: 17px;
+}
 .ToDoListGroups {
     width: 100%;
     display: flex;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import AddInput from "./components/AddInput";
 import ToDoList from "./components/ToDoList";
@@ -19,6 +19,9 @@ function App() {
     const addToDo = (newToDo) => {
         setToDoList([...toDoList, newToDo]);
     };
+    const removeToDo = (ToDoItem) => {
+        setToDoList(toDoList.filter((toDo) => toDo.id !== ToDoItem.id))
+    }
     const changeToDoStatus = (toDoItem) => {
         setToDoList((toDoList) => {
             return toDoList.map((item) => {
@@ -32,7 +35,7 @@ function App() {
     return (
         <div className="App">
             <AddInput addToDo={addToDo} />
-            <ToDoList changeToDoStatus={changeToDoStatus} list={sortedToDoItems} />
+            <ToDoList remove={removeToDo} changeToDoStatus={changeToDoStatus} list={sortedToDoItems} />
             <ToDoListGroups filter={filter} onFilterChange={onFilterChange} />
         </div>
     );
